@@ -60,7 +60,7 @@ CIDR: 10.0.0.0/16
 ```bash
 sudo apt update
 sudo apt install mysql-server -y
-MYSQL](images/mysql installed in-DB.png.PNG)
+![mysql](images/mysql installed in-DB.png.PNG)
 ```
 
 ### Set root password:
