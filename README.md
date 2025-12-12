@@ -2,6 +2,8 @@
 
 This project demonstrates migration of a MySQL database from an EC2 instance (source) to Amazon RDS (target) using AWS Database Migration Service (DMS).  
 Includes VPC setup, networking, security groups, MySQL installation, PHP application deployment, and migration verification.
+![AWS Migration Architecture](images/AWS-DB-Migration-arcitechture.jpeg)
+
 
 ---
 
