@@ -50,7 +50,7 @@ CIDR: 10.0.0.0/16
 - Allow communication between DB and RDS
 
 ### Image  
-![Security Groups](images/security-groups.png)
+![Security Groups](images/security-groups.png.PNG)
 
 ---
 
