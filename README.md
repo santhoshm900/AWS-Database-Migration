@@ -9,6 +9,8 @@ Includes VPC setup, networking, security groups, MySQL installation, PHP applica
 
 ### Created VPC  
 CIDR: 10.0.0.0/16
+![VPC](images/vpc.png)
+
 
 ### Created Subnets  
 - Public Subnet: Web-Pub-Subnet  
@@ -19,7 +21,7 @@ CIDR: 10.0.0.0/16
 - Private Route Table → No IGW  
 
 ### Images  
-![VPC](images/vpc.PNG)  
+  
 ![Subnets](images/subnetz.png)  
 ![Route Tables](images/route-table.png)
 
