@@ -1,4 +1,3 @@
-
 ---
 
 # 📌 2. VPC & Networking Setup
@@ -51,12 +50,8 @@ sudo apt install mysql-server -y
 Set root password:
 ALTER USER 'root'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'Sqladmin2025';
-
-
-📸
-
-
 📌 5. Create Database & Table
+Create DB & Table:
 CREATE DATABASE appdb;
 USE appdb;
 
@@ -65,37 +60,23 @@ CREATE TABLE Course (
    CourseName varchar(1000),
    Rating numeric(2,1)
 );
-
-Insert Data
+Insert Data:
 INSERT INTO Course VALUES
 (1,'AWS Certified Solutions Architect - Associate',4.5),
 (2,'AWS Certified Solutions Architect - Professional',4.6),
 (3,'AWS Certified DevOps Engineer - Professional',4.7);
-
-
-📸
-
-
 📌 6. Allow Remote DB Access (bind-address)
-
-Edit:
-
+Edit config:
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
-
 Update:
-
 bind-address = 10.0.1.212
 
-
-Restart:
-
+Restart MySQL:
 sudo systemctl restart mysql
 
 
 📸
-
-
 📌 7. Install Apache, PHP & MySQL Module on Web Server
 sudo apt update
 sudo apt install apache2 php php-mysql -y
@@ -117,7 +98,7 @@ Upload files to:
 
 📌 9. Test Website (DB Connectivity)
 
-Open browser:
+Open in browser:
 
 http://<webserver-public-ip>/index.php
 
@@ -174,19 +155,10 @@ SELECT * FROM appdb.Course;
 🎯 Conclusion
 
 ✔ VPC Setup
-
 ✔ Web + DB EC2 Instances
-
 ✔ Apache + PHP Deployment
-
 ✔ MySQL Source DB Setup
-
 ✔ RDS Target DB Creation
-
 ✔ DMS Migration (EC2 → RDS)
-
 ✔ Verified data in Workbench
-
 ✔ Complete Cloud Migration Project
-
-This project is perfect for DevOps / AWS Portfolio and Interview showcase.
