@@ -19,7 +19,7 @@ CIDR: 10.0.0.0/16
 - Private Route Table → No IGW  
 
 ### Images  
-![VPC](images/vpc.png)  
+![VPC](images/vpc.PNG)  
 ![Subnets](images/subnetz.png)  
 ![Route Tables](images/route-table.png)
 
