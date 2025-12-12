@@ -1,164 +1,132 @@
+# AWS Database Migration Project (EC2 → RDS Using AWS DMS)
+
+This project demonstrates migration of a MySQL database from an EC2 instance (source) to Amazon RDS (target) using AWS Database Migration Service (DMS).  
+Includes VPC setup, networking, security groups, MySQL installation, PHP application deployment, and migration verification.
+
 ---
 
-# 📌 2. VPC & Networking Setup
+## 1. VPC & Networking Setup
 
-### ✔ Created VPC  
-CIDR: **10.0.0.0/16**
+### Created VPC  
+CIDR: 10.0.0.0/16
 
-### ✔ Created Subnets  
-- Public: Web-Pub-Subnet  
-- Private: Db-Pri-Subnet, Repl-Pri-Subnet  
+### Created Subnets  
+- Public Subnet: Web-Pub-Subnet  
+- Private Subnets: Db-Pri-Subnet, Repl-Pri-Subnet  
 
-### ✔ Created Route Tables  
-- Public RT → Internet Gateway  
-- Private RT → No IGW  
+### Created Route Tables  
+- Public Route Table → Internet Gateway  
+- Private Route Table → No IGW  
 
-### 📸 Images  
+### Images  
 ![VPC](images/vpc.png)  
 ![Subnets](images/subnetz.png)  
 ![Route Tables](images/route-table.png)
 
 ---
 
-# 📌 3. Security Groups
+## 2. Security Groups
 
 ### Web-SG
 - Allow SSH (22)  
 - Allow HTTP (80)
 
 ### DB-SG
-- Allow 3306 from Web-SG  
-- Allow 3306 from DMS-SG  
+- Allow MySQL 3306 from Web-SG  
+- Allow MySQL 3306 from DMS-SG  
 
 ### RDS-SG
 - Allow 3306 from DB-SG  
 
 ### DMS-SG
-- Allow traffic from DB & RDS  
+- Allow communication between DB and RDS  
 
-### 📸 Image  
+### Image  
 ![Security Groups](images/security-groups.png)
 
 ---
 
-# 📌 4. MySQL Setup on EC2 (Source DB)
+## 3. MySQL Setup on EC2 (Source Database)
 
-### Install MySQL:
-```bash
-sudo apt update
-sudo apt install mysql-server -y
-Set root password:
+### Install MySQL
+```
 ALTER USER 'root'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'Sqladmin2025';
-📌 5. Create Database & Table
-Create DB & Table:
+
 CREATE DATABASE appdb;
 USE appdb;
 
 CREATE TABLE Course (
-   CourseID int,
-   CourseName varchar(1000),
-   Rating numeric(2,1)
+   CourseID INT,
+   CourseName VARCHAR(1000),
+   Rating NUMERIC(2,1)
 );
-Insert Data:
+
 INSERT INTO Course VALUES
 (1,'AWS Certified Solutions Architect - Associate',4.5),
 (2,'AWS Certified Solutions Architect - Professional',4.6),
 (3,'AWS Certified DevOps Engineer - Professional',4.7);
-📌 6. Allow Remote DB Access (bind-address)
-Edit config:
+
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
-Update:
 bind-address = 10.0.1.212
 
-Restart MySQL:
 sudo systemctl restart mysql
 
-
-📸
-📌 7. Install Apache, PHP & MySQL Module on Web Server
 sudo apt update
 sudo apt install apache2 php php-mysql -y
 sudo systemctl restart apache2
 
-
-📸
-
-
-📌 8. Upload PHP App (FileZilla)
-
-Upload files to:
+sudo apt update
+sudo apt install apache2 php php-mysql -y
+sudo systemctl restart apache2
 
 /var/www/html/
 
-
-📸
-
-
-📌 9. Test Website (DB Connectivity)
-
-Open in browser:
-
 http://<webserver-public-ip>/index.php
 
+9. Create RDS MySQL Instance (Target Database)
 
-📸
+DB Identifier: aws-rds-db
 
-
-📌 10. Create RDS MySQL (Target DB)
-
-Identifier: aws-rds-db
+DB Subnet Group: RDS-subnet-groups
 
 Security Group: RDS-SG
 
-Subnet Group: RDS-subnet-groups
-
-📸
 
 
 
+10. Configure AWS DMS
+Replication Instance
 
-📌 11. Create AWS DMS Components
-✔ Replication Instance
+Endpoints
 
-📸
-
-
-✔ Endpoints
-
-📸
-
-
-📌 12. Create Migration Task (Full Load)
+11. Create Full Load Migration Task
 
 Status: Load Completed (100%)
 
-📸
-
-
-📌 13. Verify Data in RDS
-
-Using MySQL Workbench:
-
+12. Verify Migrated Data in RDS
 SELECT * FROM appdb.Course;
 
 
-📸
+13. Verify EC2 → RDS Connectivity
 
+Conclusion
 
-📌 14. Verify EC2 ↔ DB Communication
+VPC + Subnets configured
 
-📸
+EC2 Web & DB servers created
 
+MySQL installed and configured
 
-🎯 Conclusion
+Apache + PHP deployed
 
-✔ VPC Setup
-✔ Web + DB EC2 Instances
-✔ Apache + PHP Deployment
-✔ MySQL Source DB Setup
-✔ RDS Target DB Creation
-✔ DMS Migration (EC2 → RDS)
-✔ Verified data in Workbench
-✔ Complete Cloud Migration Project
+RDS instance created
+
+AWS DMS migration completed
+
+Data verified in RDS
+
+Full end-to-end cloud migration successful
+sudo apt update
+sudo apt install mysql-server -y
