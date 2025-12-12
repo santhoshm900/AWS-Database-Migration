@@ -120,4 +120,85 @@ sudo systemctl restart apache2
 
 ---
 
-## 7. Upl
+## 7. Upload PHP Application
+
+Upload to:
+
+```
+/var/www/html/
+```
+
+![FileZilla Upload](images/insert-index-filezilla.png)
+
+---
+
+## 8. Test Web Application
+
+Open:
+```
+http://<webserver-public-ip>/index.php
+```
+
+![Web Output](images/http-web-ec2.png)
+
+---
+
+## 9. Create RDS MySQL Instance
+
+- DB Identifier: aws-rds-db  
+- DB Subnet Group: RDS-subnet-groups  
+- Security Group: RDS-SG  
+
+![RDS Instance](images/RDS-instance.png)  
+![RDS Subnet Group](images/RDS-subnet-groups.png)
+
+---
+
+## 10. Configure AWS DMS
+
+### Replication Instance
+![Replication Instance](images/provisioned-instance.png)
+
+### Endpoints
+![Endpoints](images/replication-endpoint.png)
+
+---
+
+## 11. Create Full Load Migration Task
+
+Status:
+```
+Load Completed (100%)
+```
+
+![DMS Task](images/repl-task.png)
+
+---
+
+## 12. Verify Migrated Data in RDS
+
+```sql
+SELECT * FROM appdb.Course;
+```
+
+![Workbench Output](images/sql-workbanch-report.png)
+
+---
+
+## 13. Verify EC2 → RDS Communication
+
+![Connectivity](images/web-instance-to-db-instance-access-sucess.png)
+
+---
+
+## Conclusion
+
+- VPC + Subnets configured  
+- EC2 Web & DB servers created  
+- MySQL installed and configured  
+- Apache + PHP deployed  
+- RDS instance created  
+- AWS DMS migration completed  
+- Data verified in RDS  
+- Full end-to-end cloud migration successful  
+
