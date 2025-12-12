@@ -13,15 +13,20 @@ CIDR: 10.0.0.0/16
 
 ### Created Subnets  
 - Public Subnet: Web-Pub-Subnet  
-- Private Subnets: Db-Pri-Subnet, Repl-Pri-Subnet  
+- Private Subnets: Db-Pri-Subnet, Repl-Pri-Subnet
+- ![Subnets](images/subnets.png.png)  
 
 ### Created Route Tables  
 - Public Route Table → Internet Gateway  
-- Private Route Table → No IGW  
+- Private Route Table → No IGW
+- ![Route Tables](images/route-table.png.PNG)
+
+
+  
 
 ### Images  
   
-![Subnets](images/subnetz.png)  
+  
 ![Route Tables](images/route-table.png)
 
 ---
