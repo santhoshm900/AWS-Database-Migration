@@ -60,9 +60,6 @@ CIDR: 10.0.0.0/16
 ```bash
 sudo apt update
 sudo apt install mysql-server -y
-### Image
-
-![mysql](images/mysql installed in-DB.png.PNG)
 
 
 ```
@@ -156,10 +153,10 @@ http://<webserver-public-ip>/index.php
 ## 10. Configure AWS DMS
 
 ### Replication Instance  
-![Replication Instance](images/provisioned-instance.png)
+![Replication Instance](images/provisioned-instance.png.PNG)
 
 ### Endpoints  
-![Endpoints](images/replication-endpoint.png)
+![Endpoints](images/replication-endpoint.png.PNG)
 
 ---
 
@@ -170,7 +167,7 @@ Status:
 Load Completed (100%)
 ```
 
-![DMS Task](images/repl-task.png)
+![DMS Task](images/repl-task.png.PNG)
 
 ---
 
@@ -181,13 +178,13 @@ Run:
 SELECT * FROM appdb.Course;
 ```
 
-![Workbench Output](images/sql-workbanch-report.png)
+![Workbench Output](images/sql-workbanch-report.png.PNG)
 
 ---
 
 ## 13. Verify EC2 → RDS Connectivity
 
-![Connectivity](images/web-instance-to-db-instance-access-sucess.png)
+![Connectivity](images/web-instance-to-db-instance-access-sucess.png.PNG)
 
 ---
 
