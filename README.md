@@ -7,18 +7,18 @@ Includes VPC setup, networking, security groups, MySQL installation, PHP applica
 
 ## 1. VPC & Networking Setup
 
-### Created VPC
+### Created VPC  
 CIDR: 10.0.0.0/16
 
-### Created Subnets
+### Created Subnets  
 - Public Subnet: Web-Pub-Subnet  
 - Private Subnets: Db-Pri-Subnet, Repl-Pri-Subnet  
 
-### Created Route Tables
+### Created Route Tables  
 - Public Route Table → Internet Gateway  
 - Private Route Table → No IGW  
 
-### Images
+### Images  
 ![VPC](images/vpc.png)  
 ![Subnets](images/subnetz.png)  
 ![Route Tables](images/route-table.png)
@@ -33,15 +33,15 @@ CIDR: 10.0.0.0/16
 
 ### DB-SG
 - Allow MySQL 3306 from Web-SG  
-- Allow MySQL 3306 from DMS-SG  
+- Allow MySQL 3306 from DMS-SG
 
 ### RDS-SG
-- Allow 3306 from DB-SG  
+- Allow 3306 from DB-SG
 
 ### DMS-SG
-- Allow communication between DB and RDS  
+- Allow communication between DB and RDS
 
-### Image
+### Image  
 ![Security Groups](images/security-groups.png)
 
 ---
@@ -54,7 +54,7 @@ sudo apt update
 sudo apt install mysql-server -y
 ```
 
-### Set root password
+### Set root password:
 ```sql
 ALTER USER 'root'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'Sqladmin2025';
@@ -83,8 +83,6 @@ INSERT INTO Course VALUES
 (3,'AWS Certified DevOps Engineer - Professional',4.7);
 ```
 
-![Database Output](images/Check-the-database-is-showing-from-webserver.png)
-
 ---
 
 ## 5. Allow Remote MySQL Access
@@ -94,7 +92,7 @@ INSERT INTO Course VALUES
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-### Update bind-address
+### Update bind-address:
 ```
 bind-address = 10.0.1.212
 ```
@@ -103,8 +101,6 @@ bind-address = 10.0.1.212
 ```bash
 sudo systemctl restart mysql
 ```
-
-![Bind Address](images/change-the-binary-address-on-mysql.png)
 
 ---
 
@@ -116,19 +112,14 @@ sudo apt install apache2 php php-mysql -y
 sudo systemctl restart apache2
 ```
 
-![Apache Install](images/install-apache-php.png)
-
 ---
 
-## 7. Upload PHP Application
+## 7. Upload PHP Application (FileZilla)
 
 Upload to:
-
 ```
 /var/www/html/
 ```
-
-![FileZilla Upload](images/insert-index-filezilla.png)
 
 ---
 
@@ -139,8 +130,6 @@ Open:
 http://<webserver-public-ip>/index.php
 ```
 
-![Web Output](images/http-web-ec2.png)
-
 ---
 
 ## 9. Create RDS MySQL Instance
@@ -149,17 +138,14 @@ http://<webserver-public-ip>/index.php
 - DB Subnet Group: RDS-subnet-groups  
 - Security Group: RDS-SG  
 
-![RDS Instance](images/RDS-instance.png)  
-![RDS Subnet Group](images/RDS-subnet-groups.png)
-
 ---
 
 ## 10. Configure AWS DMS
 
-### Replication Instance
+### Replication Instance  
 ![Replication Instance](images/provisioned-instance.png)
 
-### Endpoints
+### Endpoints  
 ![Endpoints](images/replication-endpoint.png)
 
 ---
@@ -177,6 +163,7 @@ Load Completed (100%)
 
 ## 12. Verify Migrated Data in RDS
 
+Run:
 ```sql
 SELECT * FROM appdb.Course;
 ```
@@ -185,7 +172,7 @@ SELECT * FROM appdb.Course;
 
 ---
 
-## 13. Verify EC2 → RDS Communication
+## 13. Verify EC2 → RDS Connectivity
 
 ![Connectivity](images/web-instance-to-db-instance-access-sucess.png)
 
@@ -200,5 +187,5 @@ SELECT * FROM appdb.Course;
 - RDS instance created  
 - AWS DMS migration completed  
 - Data verified in RDS  
-- Full end-to-end cloud migration successful  
+- End-to-end cloud migration successful  
 
