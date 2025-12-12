@@ -178,13 +178,13 @@ Run:
 SELECT * FROM appdb.Course;
 ```
 
-![Workbench Output](images/sql-workbanch-report.png.PNG)
+![Workbench Output](images/sql-workbench-report.png.PNG)
 
 ---
 
 ## 13. Verify EC2 → RDS Connectivity
 
-![Connectivity](images/web-instance-to-db-instance-access-sucess.png.PNG)
+![Connectivity](images/sql-workbench-report.png.PNG)
 
 ---
 
