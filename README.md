@@ -60,7 +60,10 @@ CIDR: 10.0.0.0/16
 ```bash
 sudo apt update
 sudo apt install mysql-server -y
-![mysql](images/mysql-installed.png.PNG)
+### Image
+
+![mysql](images/mysql installed in-DB.png.PNG)
+
 
 ```
 
