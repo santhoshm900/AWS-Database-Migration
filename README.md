@@ -9,7 +9,7 @@ Includes VPC setup, networking, security groups, MySQL installation, PHP applica
 
 ### Created VPC  
 CIDR: 10.0.0.0/16
-![VPC](images/vpc.PNG)
+![VPC](images/vpc.png.PNG)
 
 ### Created Subnets  
 - Public Subnet: Web-Pub-Subnet  
