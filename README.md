@@ -140,8 +140,8 @@ sudo apt update
 sudo apt install apache2 php php-mysql -y
 sudo systemctl restart apache2
 ```
+![app-db](images/install-apache-php.png)
 
----
 
 ## 7. Upload PHP Application (FileZilla)
 
