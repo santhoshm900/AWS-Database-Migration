@@ -66,10 +66,10 @@ sudo apt install mysql-server -y
 
 
 
-```
+
 
 ### Set root password:
-```sql
+sql
 ALTER USER 'root'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'Sqladmin2025';
 
