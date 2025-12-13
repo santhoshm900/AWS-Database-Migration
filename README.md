@@ -171,7 +171,7 @@ http://<35.154.15.134>/index.php
 - DB Subnet Group: RDS-subnet-groups  
 - Security Group: RDS-SG  
 
----
+![Rds-instance](images/RDS-instance.png.PNG)
 
 ## 10. Configure AWS DMS
 
