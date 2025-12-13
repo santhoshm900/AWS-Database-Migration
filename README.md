@@ -127,8 +127,12 @@ sudo systemctl restart apache2
 ## 7. Upload PHP Application (FileZilla)
 
 Upload to:
-```
+
 /var/www/html/
+
+![File Transfer using FileZilla](images/filezilla-upload.png)
+
+
 ```
 
 ---
