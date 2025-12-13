@@ -112,7 +112,6 @@ INSERT INTO Course VALUES
 ```
 
 
-![app-db](images/Add-binary-address)
 
 ## 5. Allow Remote MySQL Access
 
@@ -125,6 +124,7 @@ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 bind-address = 10.0.1.212
 ```
+![app-db](images/Add-binary-address)
 
 ### Restart MySQL
 ```bash
