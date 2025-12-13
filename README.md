@@ -57,9 +57,11 @@ CIDR: 10.0.0.0/16
 ## 3. MySQL Setup on EC2 (Source Database)
 
 ### Install MySQL
-```bash
+
 sudo apt update
 sudo apt install mysql-server -y
+![MySQL Installed on DB Server](images/mysql-installed-in-db.png)
+
 
 
 ```
