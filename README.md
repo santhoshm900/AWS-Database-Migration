@@ -111,7 +111,8 @@ INSERT INTO Course VALUES
 (3,'AWS Certified DevOps Engineer - Professional',4.7);
 ```
 
----
+
+![app-db](images/Add-binary-address)
 
 ## 5. Allow Remote MySQL Access
 
