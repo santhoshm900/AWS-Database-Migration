@@ -93,7 +93,7 @@ CREATE TABLE Course (
 );
 ```
 
-![app-db](images/mysql%20serve%20install%20app%20db.png.PNG)
+![app-db](images/mysql%20server%20install%20app%20db.png.PNG)
 
 
 
