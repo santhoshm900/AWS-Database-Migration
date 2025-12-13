@@ -154,16 +154,16 @@ Upload to:
 
 ```
 
----
+
 
 ## 8. Test Web Application
 
 Open:
 ```
-http://<webserver-public-ip>/index.php
-```
+http://<35.154.15.134>/index.php
 
----
+![index-php](images/http-index.php)
+
 
 ## 9. Create RDS MySQL Instance
 
