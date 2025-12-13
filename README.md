@@ -77,22 +77,27 @@ IDENTIFIED WITH mysql_native_password BY 'Sqladmin2025';
 
 
 
-```
+
 
 ---
 
 ## 4. Create Database and Table
 
-```sql
+sql
 CREATE DATABASE appdb;
 USE appdb;
 
 CREATE TABLE Course (
-   CourseID INT,
-   CourseName VARCHAR(1000),
-   Rating NUMERIC(2,1)
-);
-```
+  CourseID INT,
+  CourseName VARCHAR(1000),
+  Rating NUMERIC(2,1)
+); 
+
+![app-db](images/mysql%20serve%20install%20app%20db.png.PNG)
+
+
+---
+
 
 ### Insert Sample Data
 ```sql
